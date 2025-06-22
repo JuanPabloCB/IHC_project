@@ -67,3 +67,86 @@ body {
 .login-button:hover {
   background-color: #48b3cf;
 }
+
+/* PARTE DE CONSULTA GRATIS CRISTINA*/
+
+
+
+
+
+
+
+
+
+
+
+/* PARTE DE CASOS FRECUENTES JP*/
+.casos-frecuentes {
+  padding: 50px 40px;
+  background-color: #ffffff;
+}
+
+.casos-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.casos-frecuentes h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #f1d7a6; /* Color crema claro */
+  font-weight: 700;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+}
+
+.caso {
+  background-color: #fff;
+  border-radius: 12px;
+  max-width: 280px;
+  text-align: left;
+}
+
+.caso img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+}
+
+.caso h3 {
+  font-size: 1rem;
+  margin: 15px 0 5px;
+  font-weight: 600;
+}
+
+.caso p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+
+/*COMO TE AYUDA MINDECHO FABIAN */
+
+
+
+
+
+/*EXPLORA NUESTRAS HERRAMIENTAS */
+
+
+/*TESTIMONIOS DE USUARIOS */
+
+
+/*EXPLORA MAS HERRAMIENTAS JP */
+
+
+/*FOOTER*/
+

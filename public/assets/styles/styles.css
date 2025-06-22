@@ -70,16 +70,66 @@ body {
 
 /* PARTE DE CONSULTA GRATIS CRISTINA*/
 
+section.consultas-gratis {
+  padding: 3rem 0;
+  background-color: #ffffff;
+}
 
+.consultas-container{
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
 
+.consultag{
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.imgInicio {
+  width: 100%;
+  border-radius: 10px;
+}
 
+.parrafoI {
+  flex: 1 1 60%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
 
+h1{
+    font-size: 2rem;
+    color: #5cc3d6;
+}
 
+#txtInicio{
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: justify;
+  color: #444;
+}
 
-
-
-
+.btnInicio {
+  background: #5cc3d6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btnInicio:hover {
+  background: #42aabf;
+}
 /* PARTE DE CASOS FRECUENTES JP*/
 .casos-frecuentes {
   padding: 50px 40px;

@@ -321,6 +321,139 @@ h1{
 
 
 /*TESTIMONIOS DE USUARIOS */
+.testimonios-usuarios {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+.testimonios-usuarios h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #f1d7a6;
+  font-weight: 700;
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding-left: 20px;
+}
+.testimonios-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+.testimonio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.testimonio-texto {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  font-style: italic;
+}
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.autor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.autor-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+}
+.autor-info p {
+  font-size: 0.85rem;
+  color: #888;
+}
+/* Colores para los avatares */
+.avatar-1 { background-color: #e91e63; }
+.avatar-2 { background-color: #9c27b0; }
+.avatar-3 { background-color: #3f51b5; }
+/* Responsive */
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .testimonios-container {
+    padding: 30px 15px;
+    margin: 0 15px;
+  }
+  
+  .testimonio-texto {
+    font-size: 0.9rem;
+  }
+  
+  .autor-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .autor-info h4 {
+    font-size: 0.9rem;
+  }
+  
+  .autor-info p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .testimonios-usuarios {
+    padding: 40px 10px;
+  }
+  
+  .testimonios-usuarios h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .testimonio-texto {
+    font-size: 0.85rem;
+  }
+  
+  .autor-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .autor-info h4 {
+    font-size: 0.85rem;
+  }
+  
+  .autor-info p {
+    font-size: 0.75rem;
+  }
+}
 
 
 /*EXPLORA MAS HERRAMIENTAS JP */

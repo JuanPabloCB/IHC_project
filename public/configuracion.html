@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1f1f1f;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background-color: #5CC3D6;
+      width: 200px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    .sidebar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    .main {
+      background-color: #fef6f4;
+      flex: 1;
+      padding: 30px;
+    }
+
+    .volver {
+      color: #40c4e0;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .accordion {
+      width: 100%;
+      background-color: #5CC3D6;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      margin: 10px 0;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: 0.4s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion:after {
+      content: '\25B6';
+      font-size: 13px;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+    }
+
+    .accordion.active:after {
+      transform: rotate(90deg);
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <img src="assets/images/usuario.png" alt="Avatar">
+      <a href="#">Inicio</a>
+      <a href="#">Cerrar Sesión</a>
+    </div>
+    <div class="main">
+      <a href="#" class="volver">&larr; Volver</a>
+      <h1>Configuración</h1>
+
+      <button class="accordion">Cuenta</button>
+      <div class="panel">
+        <p>Configuraciones relacionadas con tu cuenta.</p>
+      </div>
+
+      <button class="accordion">Notificaciones</button>
+      <div class="panel">
+        <p>Configuraciones para notificaciones.</p>
+      </div>
+
+      <button class="accordion">Tamaño de texto</button>
+      <div class="panel">
+        <p>Ajusta el tamaño del texto.</p>
+      </div>
+
+      <button class="accordion">Idioma</button>
+      <div class="panel">
+        <p>Selecciona el idioma preferido.</p>
+      </div>
+
+      <button class="accordion">Apariencia</button>
+      <div class="panel">
+        <p>Elige el tema visual.</p>
+      </div>
+
+      <button class="accordion">Privacidad y Seguridad</button>
+      <div class="panel">
+        <p>Opciones de privacidad y seguridad.</p>
+      </div>
+
+      <button class="accordion">Eliminar cuenta</button>
+      <div class="panel">
+        <p>Aquí puedes eliminar tu cuenta permanentemente.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(acc => {
+      acc.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -17,7 +17,7 @@
       <nav class="menu">
         <a href="#">Inicio</a>
         <a href="#">Nosotros</a>
-        <a href="#">Experiencias</a>
+        <a href="./experiencias.html">Experiencias</a>
       </nav>
       <a href="./configuracion.html" class="login-button">Iniciar Sesión</a>
     </div>
@@ -40,29 +40,60 @@
     </div>
   </section>
 
-<!-- CASOS FRECUENTES JP -->
-  <section class="casos-frecuentes">
-    <h2>Casos Frecuentes</h2>
-    <div class="casos-container">
+<!-- CASOS FRECUENTES JP -->  
+<section class="casos-frecuentes">
+  <h2>Casos Frecuentes</h2>
+
+  <div class="carrusel-con-flechas">
+    <!-- Flecha izquierda -->
+    <button class="arrow-left" id="prevCase">←</button>
+
+    <!-- Contenedor de tarjetas -->
+    <div class="casos-container" id="casosContainer">
+
+      <!-- Tarjeta 1 -->
       <div class="caso">
         <img src="assets/images/estres.png" alt="Estrés">
         <h3>Estrés</h3>
         <p>Respuesta natural del cuerpo ante situaciones que percibe como desafiantes o amenazantes.</p>
       </div>
 
+      <!-- Tarjeta 2 -->
       <div class="caso">
         <img src="assets/images/ansiedad.png" alt="Ansiedad">
         <h3>Ansiedad</h3>
         <p>Sensación de miedo, preocupación o inquietud excesiva, que puede aparecer sin una amenaza real inmediata.</p>
       </div>
 
+      <!-- Tarjeta 3 -->
       <div class="caso">
         <img src="assets/images/depresion.png" alt="Depresión">
         <h3>Depresión</h3>
         <p>Trastorno emocional caracterizado por sentimientos profundos de tristeza, pérdida de interés en actividades, etc.</p>
       </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="caso">
+        <img src="assets/images/insomnio.png" alt="Insomnio">
+        <h3>Insomnio</h3>
+        <p>Dificultad para conciliar o mantener el sueño, lo que puede afectar el estado de ánimo, la concentración y el rendimiento diario.</p>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="caso">
+        <img src="assets/images/baja-autoestima.png" alt="Baja autoestima">
+        <h3>Baja autoestima</h3>
+        <p>Percepción negativa de uno mismo, acompañada de inseguridad, autocrítica constante y dificultad para tomar decisiones.</p>
+      </div>
+
     </div>
-  </section>
+
+    <!-- Flecha derecha -->
+    <button class="arrow-right" id="nextCase">→</button>
+  </div>
+</section>
+
+
 
 
 <!--COMO TE AYUDA MINDECHO FABIAN-->
@@ -85,7 +116,7 @@
       </div>
     </div>
     <div class="imagen-ayuda">
-      <img src="public/assets/images/section-3.png" alt="Persona usando Mind Echo">
+      <img src="assets/images/section-3.png" alt="Persona usando Mind Echo">
     </div>
   </div>
 </section>
@@ -205,5 +236,6 @@
 </footer>
 
   <script src="assets/scripts/script.js"></script>
+  
 </body>
 </html>

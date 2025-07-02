@@ -7,17 +7,17 @@
 
 body {
   font-family: Arial, sans-serif;
-  width: 100%;
 }
 
 /* NAVBAR */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  height: 90px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .navbar-content {
@@ -25,12 +25,13 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 40px;
+  max-width: none;
 }
 
 /* LOGO */
 .logo {
-  height: 120px;
+  height: 140px;
   width: auto;
   object-fit: contain;
 }
@@ -45,7 +46,7 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   transition: color 0.2s;
 }
 
@@ -57,11 +58,11 @@ body {
 .login-button {
   background-color: #5ac5dd;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 14px 26px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   transition: background-color 0.3s;
 }
 
@@ -69,15 +70,19 @@ body {
   background-color: #48b3cf;
 }
 
-/* CONSULTA GRATIS */
+
+
+/* PARTE DE CONSULTA GRATIS CRISTINA*/
+
 section.consultas-gratis {
   padding: 3rem 0;
   background-color: #ffffff;
 }
 
-.consultas-container {
-  width: 100%;
-  padding: 0 2rem;
+.consultas-container{
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,9 +90,10 @@ section.consultas-gratis {
   flex-wrap: nowrap;
 }
 
-.consultag {
+.consultag{
   flex: 1 1 40%;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   align-items: center;
 }
@@ -105,12 +111,12 @@ section.consultas-gratis {
   justify-content: left;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #5cc3d6;
+h1{
+    font-size: 2rem;
+    color: #5cc3d6;
 }
 
-#txtInicio {
+#txtInicio{
   margin: 2rem 0;
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -128,94 +134,163 @@ h1 {
 .btnInicio:hover {
   background: #42aabf;
 }
-
-/* CASOS FRECUENTES */
+/* PARTE DE CASOS FRECUENTES JP*/
 .casos-frecuentes {
-  padding: 50px 2rem;
+  padding: 60px 20px;
   background-color: #ffffff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.casos-frecuentes h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #E5C772;
+  font-weight: 700;
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding-left: 20px;
+}
+
+.carrusel-con-flechas {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .casos-container {
   display: flex;
   gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  scrollbar-width: none;
 }
 
-.casos-frecuentes h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #f1d7a6;
-  font-weight: 700;
-  text-align: left;
+.casos-container::-webkit-scrollbar {
+  display: none;
 }
 
-/* Cada caso */
 .caso {
+  flex: 0 0 auto;
+  width: 320px;
   background-color: #fff;
-  border-radius: 12px;
-  max-width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 24px;
   text-align: left;
 }
 
 .caso img {
   width: 100%;
-  border-radius: 10px;
+  height: 220px;
   object-fit: cover;
-  height: 200px;
+  border-radius: 14px;
+  margin-bottom: 16px;
 }
 
 .caso h3 {
-  font-size: 1rem;
-  margin: 15px 0 5px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #333;
 }
 
 .caso p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* AYUDA MINDECHO */
+/* Flechas */
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #5cc3d6;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  background-color: #48b3cf;
+}
+
+.arrow-left {
+  left: -20px;
+}
+
+.arrow-right {
+  right: -20px;
+}
+
+/* Responsive: vertical en móvil */
+@media (max-width: 768px) {
+  .casos-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  .caso {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    display: none;
+  }
+}
+
+
+
+/*COMO TE AYUDA MINDECHO FABIAN */
 .ayuda-mindecho {
   background-color: #fff;
-  padding: 60px 2rem;
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
   color: #333;
 }
 
 .contenedor-ayuda {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start; /* Alineación superior para mejor armonía */
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .texto-ayuda {
   flex: 1 1 50%;
+  max-width: 600px;
 }
 
 .texto-ayuda h2 {
-  font-size: 28px;
-  color: #e6b800;
-  margin-bottom: 24px;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #E5C772;
+  font-weight: 700;
+  text-align: center;
+  width: 100vw; /* Abarca todo el ancho de la ventana */
+  margin-left: calc(-50vw + 50%); /* Centra visualmente en pantalla */
 }
 
-.bloque-ayuda {
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.bloque-ayuda.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .bloque-ayuda h3 {
   font-size: 18px;
@@ -226,33 +301,65 @@ h1 {
 .bloque-ayuda p {
   font-size: 16px;
   color: #555;
+  margin-bottom: 20px;
 }
 
 .imagen-ayuda {
-  flex: 1 1 40%;
+  flex: 1 1 45%;
   display: flex;
   justify-content: center;
+  margin-top: 10px; /* Ajuste para equilibrar la altura visual */
 }
 
 .imagen-ayuda img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 450px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* EXPLORA HERRAMIENTAS */
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenedor-ayuda {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-ayuda {
+    padding: 0 20px;
+  }
+
+  .texto-ayuda h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .imagen-ayuda {
+    margin-top: 30px; /* Más espacio en móviles */
+  }
+
+  .imagen-ayuda img {
+    max-width: 90%;
+  }
+}
+
+/*EXPLORA NUESTRAS HERRAMIENTAS */
 .explora-nuestras-herramientas {
-  padding: 60px 2rem;
+  padding: 60px 20px;
   background-color: white;
 }
 
 .explora-nuestras-herramientas h2 {
   font-size: 2.2rem;
   margin-bottom: 50px;
-  color: #f1d7a6;
+  color: #E5C772;
   font-weight: 700;
   text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding-left: 20px;
 }
 
 .herramientas-container {
@@ -260,7 +367,9 @@ h1 {
   gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .herramienta {
@@ -302,53 +411,51 @@ h1 {
   line-height: 1.6;
 }
 
-/* TESTIMONIOS */
+
+/*TESTIMONIOS DE USUARIOS */
 .testimonios-usuarios {
-  padding: 60px 2rem;
+  padding: 60px 20px;
   background-color: #ffffff;
 }
-
 .testimonios-usuarios h2 {
   font-size: 2.2rem;
   margin-bottom: 50px;
-  color: #f1d7a6;
+  color: #E5C772;
   font-weight: 700;
   text-align: left;
+  max-width: 1400px;
+  margin: 0 auto 50px auto;
+  padding-left: 20px;
 }
-
 .testimonios-container {
-  width: 100%;
-  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px;
   border-radius: 20px;
   background-color: #fff;
 }
-
 .testimonios-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   align-items: start;
 }
-
 .testimonio {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .testimonio-texto {
   font-size: 1rem;
   color: #333;
   line-height: 1.5;
   font-style: italic;
 }
-
 .testimonio-autor {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .autor-avatar {
   width: 40px;
   height: 40px;
@@ -361,32 +468,95 @@ h1 {
   color: #fff;
   font-size: 1.2rem;
 }
-
 .autor-info h4 {
   font-size: 0.95rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 2px;
 }
-
 .autor-info p {
   font-size: 0.85rem;
   color: #888;
 }
-
-/* Avatares */
+/* Colores para los avatares */
 .avatar-1 { background-color: #e91e63; }
 .avatar-2 { background-color: #9c27b0; }
 .avatar-3 { background-color: #3f51b5; }
+/* Responsive */
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .testimonios-container {
+    padding: 30px 15px;
+    margin: 0 15px;
+  }
+  
+  .testimonio-texto {
+    font-size: 0.9rem;
+  }
+  
+  .autor-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .autor-info h4 {
+    font-size: 0.9rem;
+  }
+  
+  .autor-info p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 600px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .testimonios-usuarios {
+    padding: 40px 10px;
+  }
+  
+  .testimonios-usuarios h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .testimonio-texto {
+    font-size: 0.85rem;
+  }
+  
+  .autor-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .autor-info h4 {
+    font-size: 0.85rem;
+  }
+  
+  .autor-info p {
+    font-size: 0.75rem;
+  }
+}
 
-/* EXPLORA MÁS HERRAMIENTAS */
+
+/*EXPLORA MAS HERRAMIENTAS JP */
 .explora-herramientas {
-  background-color: #f4f4f4;
-  padding: 50px 2rem;
+  background-color: #f4f4f4; /* Fondo gris claro */
+  padding: 50px 40px;
 }
 
 .contenido-herramientas {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -406,15 +576,17 @@ h1 {
 }
 
 .btn-principal {
-  background-color: #5ac5dd;
+  background-color: #5ac5dd; /* mismo color que "Iniciar sesión" */
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: bold; /* igual que login-button */
   font-size: 14px;
+  font-family: Arial, sans-serif; /* mismo tipo de fuente */
   transition: background-color 0.3s ease;
 }
+
 
 .btn-principal:hover {
   background-color: #40b0c6;
@@ -428,6 +600,7 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
+  font-family: Arial, sans-serif;
   transition: background-color 0.3s ease;
 }
 
@@ -435,24 +608,27 @@ h1 {
   background-color: #ccc;
 }
 
-/* FOOTER */
+
+/*FOOTER*/
 .footer-linea {
-  height: 2.5px;
-  background-color: #40b0c6;
-  width: 100%;
+  height: 2.5px;          
+  background-color: #40b0c6; 
+  width: 100%;          
 }
 
 .footer {
   background-color: #ffffff;
-  padding: 40px 2rem;
+  padding: 40px 20px;
   border-top: 1px solid #eaeaea;
+  font-family: Arial, sans-serif;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .logo-social {
@@ -498,10 +674,9 @@ h1 {
   text-decoration: underline;
 }
 
-/* Responsive ajustes */
+/* Responsive */
 @media (max-width: 768px) {
-  .footer-container,
-  .contenido-herramientas {
+  .footer-container {
     flex-direction: column;
     text-align: center;
   }
@@ -520,4 +695,3 @@ h1 {
     margin: 20px 0;
   }
 }
-

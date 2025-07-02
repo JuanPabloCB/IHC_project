@@ -1,3 +1,5 @@
+
+// Modal de Confirmación (accordion)- Cristina
 const accordions = document.querySelectorAll(".accordion");
 accordions.forEach(acc => {
     acc.addEventListener("click", function () {

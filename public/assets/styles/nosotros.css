@@ -1,0 +1,405 @@
+/* === GENERAL === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  max-width: none;
+}
+
+/* LOGO */
+.logo {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #5ac5dd;
+}
+
+/* BOTÓN LOGIN */
+.login-button {
+  background-color: #5ac5dd;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #48b3cf;
+}
+
+/* === MAIN === */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+/* === ACERCA DE NOSOTROS === */
+.acerca-de h1 {
+  color: #0ac6ef;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-align: left;
+  max-width: 1400px;
+  margin: 40px auto 50px auto;
+  padding-left: 20px;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  text-align: left; /* Para mantener párrafos alineados al leer */
+}
+
+.texto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.texto p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.texto h3 {
+  color: #f4a71d;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.imagen {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.imagen img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* === INTEGRANTES === */
+.integrantes {
+  margin-top: 50px;
+}
+
+.integrantes h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0ac6ef;
+  margin: 40px auto 30px auto;
+  max-width: 1200px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.miembros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* === CARD DE MIEMBRO === */
+.miembro {
+  background: #f1f1f1;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: calc(25% - 30px); /* 4 por fila */
+  min-width: 220px;
+  max-width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  /* animación al cargar */
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+/* === EFECTO HOVER MODERNO === */
+.miembro:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === AVATAR === */
+.miembro img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.miembro strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 1rem;
+}
+
+.miembro p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1000px) {
+  .miembro {
+    width: calc(33.33% - 30px); /* 3 por fila */
+  }
+}
+
+@media (max-width: 768px) {
+  .miembro {
+    width: calc(50% - 30px); /* 2 por fila */
+  }
+
+  .integrantes h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .miembro {
+    width: 100%; /* 1 por fila */
+  }
+}
+
+
+/* === CONTACTO  === */
+.contacto {
+  margin-top: 80px;
+  padding: 40px 20px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacto h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #0ac6ef;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.contacto form {
+  display: grid;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contacto button {
+  background-color: #000;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* === FOOTER === */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .miembros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .miembro {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .contacto form {
+    width: 90%;
+  }
+
+  .titulo-centrado {
+    text-align: center;
+  }
+}
+
+
+/*FOOTER*/
+.footer-linea {
+    height: 2.5px;          
+  background-color: #40b0c6; 
+  width: 100%;      
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-top: 1px solid #eaeaea;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-social {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.social a {
+  margin-right: 10px;
+}
+
+.footer-links {
+  flex: 2 1 500px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-social {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links div {
+    margin: 20px 0;
+  }
+}

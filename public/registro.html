@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEcho - Registro</title>
+  <link rel="stylesheet" href="assets/styles/registro.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="navbar">
+  <div class="navbar-content">
+    <img src="assets/images/Logo Mindecho.png" alt="MindEcho Logo" class="logo">
+    <nav class="menu">
+      <a href="./index.html">Inicio</a>
+      <a href="./nosotros.html">Nosotros</a>
+      <a href="./experiencias.html">Experiencias</a>
+    </nav>
+    <a href="./login.html" class="login-button">Iniciar Sesión</a>
+  </div>
+</header>
+
+<main>
+  <!-- Imagen de fondo -->
+  <img src="assets/images/registro.jpeg" alt="Fondo">
+  <div class="overlay"></div>
+
+  <!-- Cuadro celeste -->
+  <div class="registro-box">
+    <h2>Regístrate</h2>
+
+    <div class="form-group">
+      <img src="assets/images/avatar.png" alt="Usuario">
+      <input type="text" placeholder="Nombres y Apellidos" id="name">
+    </div>
+
+    <div class="form-group">
+      <img src="assets/images/calendario.png" alt="Fecha">
+      <input type="date" id="dob">
+    </div>
+
+    <div class="form-group">
+      <img src="assets/images/correo.png" alt="Correo">
+      <input type="email" placeholder="Correo Electrónico" id="email">
+    </div>
+
+    <div class="form-group">
+      <img src="assets/images/key.png" alt="Contraseña">
+      <input type="password" placeholder="Contraseña" id="password">
+    </div>
+
+    <div class="checkbox-container">
+      <label>
+        <input type="checkbox" id="terms">
+        He leído y acepto las <a href="#">Políticas de Privacidad</a>
+      </label>
+    </div>
+
+    <button class="btn-submit" id="registerBtn">Acceder</button>
+
+    <div class="line"></div>
+
+    <p>Puedes iniciar sesión con:</p>
+    <div class="social-icons">
+      <img src="assets/images/google.png" alt="Google">
+      <img src="assets/images/facebook.png" alt="Facebook">
+      <img src="assets/images/x.png" alt="X">
+    </div>
+
+    <div class="back">
+      <img src="assets/images/triangulo.png" alt="Volver">
+      <a href="index.html">Volver</a>
+    </div>
+  </div>
+</main>
+
+
+
+</body>
+</html>

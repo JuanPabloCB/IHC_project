@@ -6,22 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
   <link rel="stylesheet" href="assets/styles/experiencias.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
 <!-- HEADER -->
-  <header class="navbar">
-    <div class="navbar-content">
-      <img src="assets/images/Logo Mindecho.png" alt="MindEcho Logo" class="logo">
-      <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="experiencias.html">Experiencias</a>
-      </nav>
-      <a href="./login.html" class="login-button">Iniciar Sesión</a>
+<header class="navbar">
+  <div class="navbar-content">
+    <img src="assets/images/Logo Mindecho.png" alt="MindEcho Logo" class="logo">
+
+    <!-- Icono hamburguesa -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
     </div>
-  </header>
+
+    <nav class="menu" id="mainMenu">
+      <a href="./index.html">Inicio</a>
+      <a href="./nosotros.html">Nosotros</a>
+      <a href="./experiencias.html">Experiencias</a>
+      <a href="./contacto.html">Contacto</a>
+
+      <!-- Solo aparecerá en responsive -->
+      <a href="./login.html" class="login-button responsive">Iniciar Sesión</a>
+    </nav>
+
+    <!-- Solo visible en escritorio -->
+    <a href="./login.html" class="login-button desktop">Iniciar Sesión</a>
+  </div>
+</header>
 
 <!--CONTENIDO EXPERIENCIAS-->
 <!--1ra Parte-->
@@ -161,6 +174,6 @@
   <p><br></p>
 </footer>
 
-  <script src="assets/scripts/script.js"></script>
+  <script src="assets/scripts/experiencias"></script>
 </body>
 </html>

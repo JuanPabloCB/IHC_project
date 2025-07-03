@@ -70,6 +70,68 @@ body {
   background-color: #48b3cf;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Ocultar botón responsive en escritorio */
+.login-button.responsive {
+  display: none;
+}
+
+/* Ocultar botón desktop en móvil */
+.login-button.desktop {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    z-index: 999;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .login-button.responsive {
+    display: inline-block;
+    background-color: #5ac5dd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .login-button.desktop {
+    display: none;
+  }
+}
+
+
 
 
 /* PARTE DE CONSULTA GRATIS CRISTINA*/

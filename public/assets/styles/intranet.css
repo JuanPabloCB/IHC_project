@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #5CC3D6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.sidebar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px 60px; /* Solo dejamos un pequeño margen lateral */
+    background-color: #fff8f7;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.header-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .notification-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+header .logo-icon {
+    width: 70px;
+    height: 70px;
+}
+
+header h1 {
+    color: #42a5f5;
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+header p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.full-width {
+    width: 100%;
+    background-color: #63c9d6;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-height: 180px;
+}
+
+.full-width:hover {
+    background-color: #5ab7c1;
+}
+
+.half-buttons {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.half-buttons button {
+    flex: 1;
+    background-color: #63c9d6;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    min-height: 180px;
+}
+
+.half-buttons button:hover {
+    background-color: #5ab7c1;
+}
+
+.half-buttons button img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}

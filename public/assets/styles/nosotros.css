@@ -77,52 +77,79 @@ main {
 }
 
 /* === ACERCA DE NOSOTROS === */
+.acerca-de {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
 .acerca-de h1 {
   color: #0ac6ef;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
+  font-size: 2.5rem;
   font-weight: 700;
-  text-align: left;
-  max-width: 1400px;
-  margin: 40px auto 50px auto;
-  padding-left: 20px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  padding-left: 0;
 }
 
 .contenido {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
-  text-align: left; /* Para mantener párrafos alineados al leer */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  text-align: left;
 }
 
 .texto {
-  flex: 1;
-  min-width: 280px;
-  max-width: 500px;
+  flex: 1 1 55%;
+  max-width: 600px;
 }
 
 .texto p {
+  font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .texto h3 {
   color: #f4a71d;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .imagen {
-  flex: 1;
-  min-width: 250px;
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
   max-width: 400px;
 }
 
 .imagen img {
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .texto,
+  .imagen {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
 
 /* === INTEGRANTES === */
 .integrantes {
@@ -344,7 +371,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} 
 
 .logo img {
   height: 50px;

@@ -1,0 +1,251 @@
+
+  /* === GENERAL === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  max-width: none;
+}
+
+/* LOGO */
+.logo {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #5ac5dd;
+}
+
+/* BOTÓN LOGIN */
+.login-button {
+  background-color: #5ac5dd;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #48b3cf;
+}
+
+/* === MAIN === */
+main {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+main img[alt="Fondo"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.login-box {
+  background-color: rgba(0, 204, 222, 0.9);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.login-left, .login-right {
+  flex: 1 1 300px;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+
+.login-left h2 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+
+.form-group img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.form-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.forgot {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn-submit {
+  background: white;
+  color: #00a4c7;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #e6e6e6;
+}
+
+.login-right {
+    display: flex;
+  flex-direction: column;
+  align-items: center;        /* Centra horizontalmente */
+  justify-content: center;    /* Centra verticalmente */
+  border-left: 1px solid white;
+  color: white;
+  text-align: center;
+}
+
+.login-right p {
+  margin-bottom: 10px;
+}
+
+.login-right a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.social-icons img {
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.back {
+  margin-top: auto;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.back img {
+  height: 16px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .login-box {
+    flex-direction: column;
+  }
+
+  .login-right {
+    border-left: none;
+    border-top: 1px solid white;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 100px;
+  }
+}

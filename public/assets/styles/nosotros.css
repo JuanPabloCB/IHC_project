@@ -316,52 +316,6 @@ main {
 }
 
 
-/* === CONTACTO  === */
-.contacto {
-  margin-top: 80px;
-  padding: 40px 20px;
-  background-color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contacto h2 {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  color: #0ac6ef;
-  width: 100%;
-  max-width: 1200px;
-  text-align: left;
-  padding-left: 20px;
-}
-
-.contacto form {
-  display: grid;
-  gap: 15px;
-  width: 100%;
-  max-width: 600px;
-}
-
-.contacto input,
-.contacto textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-}
-
-.contacto button {
-  background-color: #000;
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 
 /* === FOOTER === */

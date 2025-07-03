@@ -136,22 +136,20 @@ main img[alt="Fondo"] {
   padding: 10px;
 }
 
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
+.checkbox-container {
   color: white;
-  gap: 5px;
+  font-size: 13px;
+  text-align: left;
 }
 
-.checkbox-group input[type="checkbox"] {
-  accent-color: white;
-}
-
-.checkbox-group a {
+.checkbox-container a {
   color: white;
   text-decoration: underline;
   font-weight: bold;
+}
+
+.checkbox-container input[type="checkbox"] {
+  accent-color: white;
 }
 
 /* BOTÓN ACCEDER */
@@ -189,6 +187,25 @@ main img[alt="Fondo"] {
   transform: scale(1.1);
 }
 
+/* ENLACE YA TIENES CUENTA */
+.login-link {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  color: #e0e0e0;
+}
+
+/* VOLVER */
 .back {
   display: flex;
   align-items: center;
@@ -197,13 +214,18 @@ main img[alt="Fondo"] {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  justify-content: center;
 }
+
 .back a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
+.back a:hover {
+  text-decoration: underline;
+}
 
 .back img {
   height: 16px;

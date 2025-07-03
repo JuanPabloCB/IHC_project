@@ -21,6 +21,7 @@
   </div>
 </header>
 
+<!-- Main content -->
 <main>
   <!-- Imagen de fondo -->
   <img src="assets/images/registro.jpeg" alt="Fondo">
@@ -48,7 +49,10 @@
     <div class="form-group">
       <img src="assets/images/key.png" alt="Contraseña">
       <input type="password" placeholder="Contraseña" id="password">
+      <img src="assets/images/ojo.png" alt="Mostrar contraseña" id="eyeClosed" style="height: 20px; cursor: pointer;">
+      <img src="assets/images/invisible.png" alt="Ocultar contraseña" id="eyeOpen" style="height: 20px; cursor: pointer; display: none;">
     </div>
+
 
     <div class="checkbox-container">
       <label>
@@ -57,9 +61,13 @@
       </label>
     </div>
 
-    <button class="btn-submit" id="registerBtn">Acceder</button>
+    <button class="btn-submit" id="registerBtn">Crear Cuenta</button>
 
     <div class="line"></div>
+
+    <p class="login-link">
+      ¿Ya tienes una cuenta? <a href="login.html">Entra aquí</a>
+    </p>
 
     <p>Puedes iniciar sesión con:</p>
     <div class="social-icons">
@@ -74,7 +82,8 @@
     </div>
   </div>
 </main>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/scripts/registro.js"></script>
 
 
 </body>

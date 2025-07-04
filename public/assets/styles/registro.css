@@ -127,6 +127,12 @@ body {
   .login-button.desktop {
     display: none;
   }
+
+  .logo{
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+  }
 }
 
 /* FONDO Y OVERLAY */

@@ -112,6 +112,8 @@ body {
     font-size: 26px;
     color: #000;
     cursor: pointer;
+    margin-top: -80px;
+    margin-left: auto;
   }
 
   .login-button.responsive {
@@ -123,6 +125,10 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+  }
+  .login-button.responsive:hover {
+    background-color: #48b3cf;
+    color: #fff;  
   }
 
   .login-button.desktop {
@@ -211,11 +217,19 @@ main img[alt="Fondo"] {
   font-size: 14px;
   margin-bottom: 20px;
   color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.forgot:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .btn-submit {
+  display: block;
   background: white;
   color: #00a4c7;
+  font-size: 16px;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -223,6 +237,9 @@ main img[alt="Fondo"] {
   width: 100%;
   font-weight: bold;
   transition: background 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto;
 }
 
 .btn-submit:hover {

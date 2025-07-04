@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "Inicio de sesión exitoso.",
         confirmButtonColor: "#00bcd4",
       }).then(() => {
-        window.location.href = "index.html";
+        window.location.href = "intranet.html";
       });
     });
   }
@@ -69,3 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//Leer correo para mostrar en Dashboard/Main
+function loginUsuario(){
+  const correo = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  localStorage.setItem("correoGuardado", correo);
+  window.location.href = "intranet.html";
+}
+
+document.getElementById('forgot-password').addEventListener('click', function () {
+  window.location.href = 'olvideContrasena.html';
+});

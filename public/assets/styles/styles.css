@@ -125,6 +125,10 @@ body {
     font-weight: bold;
     font-size: 16px;
   }
+  .login-button.responsive:hover {
+    background-color: #48b3cf;
+    color: white;
+  }
 
   .login-button.desktop {
     display: none;
@@ -690,6 +694,31 @@ h1{
   background-color: #ccc;
 }
 
+/*Responsive Explora Más Herramientas - Oliver*/
+@media (max-width: 600px) {
+  .explora-herramientas {
+    padding: 30px 20px;
+  }
+
+  .contenido-herramientas h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 100px; /* Espacio debajo del h2 */
+    padding: 0;
+  }
+
+  .botones-herramientas {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-principal,
+  .btn-secundario {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+}
 
 /*FOOTER*/
 .footer-linea {

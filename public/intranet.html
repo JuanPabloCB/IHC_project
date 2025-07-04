@@ -12,7 +12,7 @@
     <div class="sidebar">
         <img src="assets/images/usuario.png" alt="Avatar">
         <a href="#">Inicio</a>
-        <a href="#">Cerrar Sesión</a>
+        <a href="./login.html">Cerrar Sesión</a>
     </div>
 
     <div class="main-content">
@@ -22,7 +22,8 @@
                 <img class="logo-icon" src="assets/images/logo.png" alt="Logo">
             </div>
 
-            <h1>Bienvenido [Name], aquí estoy para ti.</h1>
+            <h1 id="bienvenida">Bienvenido [Name], aquí estoy para ti.</h1>
+            <script src="assets/scripts/intranet.js"></script>
             <p>¿Cómo te sientes hoy? Estoy para escucharte.</p>
         </header>
 
@@ -42,7 +43,7 @@
                 <button>
                     Necesito ánimo
                 </button>
-                <button>
+                <button onclick="window.location.href='./configuracion.html'">
                     <img src="assets/images/settings.png" alt="Config Icon">
                     Configuración
                 </button>

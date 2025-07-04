@@ -136,3 +136,31 @@ header p {
     height: 50px;
     margin-bottom: 15px;
 }
+
+.header-top {
+    position: absolute;
+    top: -20px;
+    right: -50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 2;
+}
+
+header h1 {
+    color: #42a5f5;
+    margin-bottom: 10px;
+    font-size: 36px;
+    margin-top: 60px;
+}
+
+.notification-icon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.logo-icon{
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}

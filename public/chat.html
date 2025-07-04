@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindEcho - Chat</title>
+  <link rel="stylesheet" href="assets/styles/chat.css" />
+</head>
+<body>
+
+
+<!-- Header -->
+<header class="top-header">
+  <a href="intranet.html">
+    <img src="assets/images/Logo Mindecho.png" alt="Logo MindEcho" class="logo" />
+  </a>
+</header>
+
+
+
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+
+    <!-- Sidebar izquierda -->
+    <aside class="sidebar">
+       <button class="back-btn" onclick="window.location.href='intranet.html'">◀ Volver</button>
+      <h2 class="chat-title">Chats</h2>
+      <h4>Recientes</h4>
+
+      <!-- Recuadro de chats recientes -->
+      <div class="chat-box" id="chat-list">
+        <!-- Chats se agregarán dinámicamente -->
+      </div>
+    </aside>
+
+    <!-- Zona de conversación -->
+    <section class="chat-area">
+
+      <!-- Encabezado del chat -->
+      <div class="chat-header">
+        <img src="assets/images/logo.png" class="chat-logo" />
+        <h2>¿Cómo puedo ayudarte hoy?</h2>
+      </div>
+
+      <!-- Área de mensajes (oculta inicialmente) -->
+      <div class="chat-messages" id="chat-messages" style="display: none;">
+        <!-- Aquí se mostrarán mensajes -->
+      </div>
+
+      <!-- Input inferior -->
+      <div class="chat-input">
+        <!-- Botón con tooltip para añadir nuevo chat -->
+        <div class="tooltip-container">
+          <button class="add-chat-btn" id="add-chat">
+            <img src="assets/images/chat.png" alt="Añadir chat" />
+          </button>
+          <span class="tooltip-text">Añadir otro chat</span>
+        </div>
+
+        <!-- Campo de entrada deshabilitado -->
+        <input type="text" placeholder="Empezar una conversación"  />
+
+        <!-- Botones micrófono y enviar -->
+        <button class="mic-btn">
+          <img src="assets/images/microfono.png" alt="Micrófono" />
+        </button>
+        <button class="send-btn">
+          <img src="assets/images/enviar-mensaje.png" alt="Enviar" />
+        </button>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- JavaScript funcional -->
+  <script src="assets/scripts/chat.js"></script>
+</body>
+</html>

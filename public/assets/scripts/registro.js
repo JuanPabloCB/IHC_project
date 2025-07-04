@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("registerBtn");
 
   btn.addEventListener("click", function (e) {
-    e.preventDefault(); // Evita que el botón recargue la página
+    e.preventDefault(); // Evita recarga
 
     const name = document.getElementById("name").value.trim();
     const dob = document.getElementById("dob").value.trim();
@@ -12,29 +12,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validación
     if (!name || !dob || !email || !password) {
-      alert("Por favor, complete todos los campos.");
+      Swal.fire({
+        icon: 'warning',
+        title: 'Campos incompletos',
+        text: 'Por favor, completa todos los campos.',
+      });
       return;
     }
 
     if (!terms) {
-      alert("Debe aceptar las Políticas de Privacidad.");
+      Swal.fire({
+        icon: 'info',
+        title: 'Acepta las políticas',
+        text: 'Debes aceptar las Políticas de Privacidad.',
+      });
       return;
     }
 
-    // Mensaje de éxito
-    alert("Cuenta creada correctamente. Redirigiendo al login...");
+    // Guardar nombre
+    localStorage.setItem("usuarioNombre", name);
 
-    // Redirige a login.html después de 1 segundo
-    setTimeout(() => {
-      window.location.href = "login.html";
-    }, 1000);
+    // Mensaje de éxito y redirección
+    Swal.fire({
+      icon: 'success',
+      title: '¡Cuenta creada con éxito!',
+      showConfirmButton: false,
+      timer: 2000
+    }).then(() => {
+      window.location.href = "intranet.html"; // Redirige al dashboard
+    });
   });
-});
-document.addEventListener('DOMContentLoaded', () => {
+
+  // Menú hamburguesa
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('mainMenu');
-
   toggle.addEventListener('click', () => {
     menu.classList.toggle('show');
   });
 });
+

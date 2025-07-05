@@ -17,6 +17,10 @@ function goBack() {
     window.location.href = '../public/intranet.html';
 }
 
+document.getElementById('closeModal').addEventListener('click', () => {
+    window.location.href = 'intranet.html';
+});
+
 // Configurar rutas
 const ROUTES = {
     HOME: '../public/index.html',

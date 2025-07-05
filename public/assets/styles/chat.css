@@ -67,13 +67,18 @@ body {
 }
 
 .chat-item {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #b0f0ff;
   padding: 6px 0;
   font-size: 14px;
+  border-radius: 8px;
 }
-
+.chat-item:hover {
+  background-color: #ffffff33;
+  box-shadow: inset 0 0 0 1px #ffffff88;
+}
 /* === ZONA DE CONVERSACIÓN === */
 .chat-area {
   flex: 1;
@@ -268,7 +273,9 @@ body {
 
   .chat-input {
     flex-direction: column;
-    gap: 10px;
+    align-items: stretch;
+    gap: 12px;
+    padding: 10px 20px;
   }
 
   .chat-input input {

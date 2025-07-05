@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DemoIAGratis - Chat</title>
+  <link rel="stylesheet" href="assets/styles/demo.css" />
+</head>
+<body>
+
+<header class="top-header">
+  <a href="index.html">
+    <img src="assets/images/Logo Mindecho.png" alt="Logo DemoIAGratis" class="logo" />
+  </a>
+</header>
+
+<div class="main-container">
+  <aside class="sidebar">
+    <button class="back-btn" onclick="window.location.href='index.html'">◀ Volver</button>
+    <h2 class="chat-title">Chats</h2>
+    <h4>Recientes</h4>
+    <div class="chat-box" id="chat-list"></div>
+  </aside>
+
+  <section class="chat-area">
+    <div class="chat-header">
+      <img src="assets/images/logo.png" class="chat-logo" />
+      <h2>¿Cómo puedo ayudarte hoy?</h2>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="MindEcho-Talks-Box">
+        <div class="MindEcho-Talks-Container">
+          <div class="VirtualAsistentPicture VASpeak">
+            <img src="assets/images/logo.png" alt="VirtualAsistentPicture" class="imgVA">
+          </div>
+          <div class="VAMenssages VASpeak">
+            Hola soy MindEchoAI. ¿Cómo te sientes hoy?
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <div class="tooltip-container">
+        <button class="add-chat-btn" id="add-chat">
+          <img src="assets/images/chat.png" alt="Añadir chat" />
+        </button>
+        <span class="tooltip-text">Añadir otro chat</span>
+      </div>
+      <input class="text" type="text" placeholder="Empezar una conversación" />
+      <button class="mic-btn">
+        <img src="assets/images/microfono.png" alt="Micrófono" />
+      </button>
+      <button class="send-btn">
+        <img src="assets/images/enviar-mensaje.png" alt="Enviar" />
+      </button>
+    </div>
+  </section>
+</div>
+
+<script src="assets/scripts/demo.js"></script>
+
+</body>
+</html>

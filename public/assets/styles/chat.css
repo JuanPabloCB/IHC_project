@@ -98,8 +98,9 @@ body {
   display: flex;
   flex-direction: row ;
   width: 100%;
-  height: 100%;
+  height: 35pc;
   padding: 2px;
+  overflow: hidden;
 }
 
 .MindEcho-Talks-Box .MindEcho-Talks-Container {

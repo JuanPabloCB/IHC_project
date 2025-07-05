@@ -38,7 +38,7 @@ const messageInput = document.querySelector('.text');
 const sendButton = document.querySelector('.send-btn');
 sendButton.addEventListener('click', () => {
 
-  if (messageInput.value === "") {
+  if (messageInput.value === "" || messageInput.value===null) {
     alert("Please write a message before sending.");
     return;
   }
@@ -53,6 +53,8 @@ let createChat = (mssg) => {
   const humanGloveCnt = document.createElement('div');
   const humanGlove = document.createElement('div');
   const textGlove = document.createTextNode(mssg);
+  const imgHuman = document.createElement('img');
+  const imgHumanContainer = document.createElement('div')
 
   humanGlove.classList.add('HumanMenssages');
   imgHuman.src = "assets/images/usuario.png";

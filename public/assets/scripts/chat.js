@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // === ELEMENTOS PRINCIPALES ===
   let chatCount = 1;
-  const chatList = document.getElementById("chat-list");
-  const addChatBtn = document.getElementById("add-chat");
+  const chatList         = document.getElementById("chat-list");
+  const addChatBtn       = document.getElementById("add-chat");
   const messageContainer = document.querySelector('.MindEcho-Talks-Box');
-  const messageInput = document.querySelector('.text');
-  const sendButton = document.querySelector('.send-btn');
+  const messageInput     = document.querySelector('.text');
+  const sendButton       = document.querySelector('.send-btn');
+  const welcomeText      = "Hola soy MindEchoAI. ¿Cómo te sientes hoy?";
 
-  const welcomeText = "Hola soy MindEchoAI. ¿Cómo te sientes hoy?";
-
+  // === FUNCIONES AUXILIARES ===
   const getCurrentTime = () => {
     const now = new Date();
     return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
@@ -33,16 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("VirtualAsistentPicture");
-
     const img = document.createElement("img");
     img.src = "assets/images/logo.png";
     img.alt = "VirtualAsistentPicture";
     img.classList.add("imgVA");
+    imgContainer.appendChild(img);
 
     const msgDiv = document.createElement("div");
     msgDiv.classList.add("VAMenssages");
 
-    imgContainer.appendChild(img);
     container.appendChild(imgContainer);
     container.appendChild(msgDiv);
     messageContainer.appendChild(container);
@@ -51,15 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
     else msgDiv.textContent = text;
   };
 
-  // Crear Chat #1 sin mensaje bot
+  // === CHAT #1 INICIAL ===
   const firstChat = document.createElement("div");
   firstChat.classList.add("chat-item");
   firstChat.innerHTML = `<span>Chat #1</span><span>${getCurrentTime()}</span>`;
   chatList.appendChild(firstChat);
 
-  // No hay showBotMessage() aquí
-
-  // Agregar nuevo chat (#2 en adelante)
+  // === AÑADIR NUEVO CHAT ===
   addChatBtn.addEventListener("click", () => {
     chatCount++;
     const newChat = document.createElement("div");
@@ -70,14 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     messageContainer.innerHTML = "";
     messageInput.value = "";
-    showBotMessage(welcomeText, true);  // Aparece con animación
+    showBotMessage(welcomeText, true);
   });
 
+  // === DESPLAZAR AL FINAL ===
   const scrollBtm = () => {
     messageContainer.scrollTop = messageContainer.scrollHeight;
   };
 
-  // Enviar mensaje de usuario
+  // === ENVIAR MENSAJE DEL USUARIO ===
   sendButton.addEventListener("click", () => {
     const msg = messageInput.value.trim();
     if (!msg) {
@@ -88,32 +87,36 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollBtm();
   });
 
+  // === CREAR BLOQUE DE CHAT ===
   function createChat(mssg) {
     // Mensaje humano
-    const humanGloveCnt = document.createElement('div');
-    const humanGlove = document.createElement('div');
-    const imgHuman = document.createElement('img');
-    const imgHumanContainer = document.createElement('div');
-
-    humanGlove.classList.add('HumanMenssages');
-    imgHuman.src = "assets/images/usuario.png";
-    imgHuman.alt = "VirtualHumanPicture";
-    imgHuman.classList.add('imgHuman');
-    imgHumanContainer.classList.add('HumanAsistentPicture');
+    const humanGloveCnt     = document.createElement('div');
     humanGloveCnt.classList.add('Human-Talks-Container');
 
+    const imgHumanContainer = document.createElement('div');
+    imgHumanContainer.classList.add('HumanAsistentPicture');
+    const imgHuman          = document.createElement('img');
+    imgHuman.src            = "assets/images/usuario.png";
+    imgHuman.alt            = "VirtualHumanPicture";
+    imgHuman.classList.add('imgHuman');
     imgHumanContainer.appendChild(imgHuman);
+
+    const humanGlove = document.createElement('div');
+    humanGlove.classList.add('HumanMenssages');
     humanGlove.textContent = mssg;
+
     humanGloveCnt.appendChild(imgHumanContainer);
     humanGloveCnt.appendChild(humanGlove);
     messageContainer.appendChild(humanGloveCnt);
 
+    // Lógica del bot
     chatBox(mssg);
     showBotMessage(answerBot, true);
     messageInput.value = "";
   }
 
-  const chatBox = (sentence) => {
+  // === LÓGICA DE RESPUESTA DEL BOT ===
+ const chatBox = (sentence) => {
   let finalAnsw = "";
 
   sentence = sentence.trim().toLowerCase();
@@ -414,4 +417,48 @@ document.addEventListener("DOMContentLoaded", () => {
   answerBot = finalAnsw;
 };
 
+
+  // === MODAL DE VALORACIÓN ===
+  const endChatBtn   = document.getElementById("end-chat-btn");
+  const ratingModal  = document.getElementById("rating-modal");
+  const stars        = document.querySelectorAll(".rating-modal .star");
+  const laterBtn     = document.getElementById("later-btn");
+  const submitBtn    = document.getElementById("submit-rating-btn");
+  const feedbackInput= document.getElementById("rating-feedback");
+  let rating         = 0;
+
+  // Mostrar modal al finalizar
+  endChatBtn.addEventListener("click", () => {
+    rating = 0;
+    stars.forEach(s => s.classList.remove("selected"));
+    feedbackInput.value = "";
+    ratingModal.classList.add("active");
+  });
+
+  // Selección de estrellas
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+      rating = parseInt(star.dataset.value);
+      stars.forEach(s => {
+        s.classList.toggle("selected", parseInt(s.dataset.value) <= rating);
+      });
+    });
+  });
+
+  // "En otro momento" → redirige
+  laterBtn.addEventListener("click", () => {
+    ratingModal.classList.remove("active");
+    window.location.href = 'intranet.html';
+  });
+
+  // "Enviar" → valida y redirige
+  submitBtn.addEventListener("click", () => {
+    if (rating === 0) {
+      alert("Por favor, selecciona una puntuación.");
+      return;
+    }
+    // Aquí podrías procesar rating y feedbackInput.value
+    alert("¡Gracias por tu evaluación!");
+    window.location.href = 'intranet.html';
+  });
 });

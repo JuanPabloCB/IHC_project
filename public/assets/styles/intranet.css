@@ -164,3 +164,261 @@ header h1 {
     width: auto;
     object-fit: contain;
 }
+
+/* MODAL */
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Para que se muestre sobre todo */
+}
+
+/* Caja del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Opciones dentro del modal */
+.modal-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.modal-options .option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-options img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    background-color: #5ac8fa;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-buttons .close-button {
+    background-color: gray;
+}
+
+
+/*MODAL222*/
+/* Fondo oscuro */
+/* Fondo oscuro */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px; /* Aumenté el tamaño */
+    width: 90%;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content h2 {
+    font-size: 18px; /* Aumenté el tamaño */
+    margin-bottom: 30px; /* Aumenté el espacio */
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.modal-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px; /* Más espacio abajo */
+}
+
+.modal-options .option {
+    border: 2px solid #5ac8fa;
+    border-radius: 10px;
+    padding: 15px; /* Más espacio interno */
+    cursor: pointer;
+    width: 120px; /* Más grande */
+    height: 140px; /* Más grande */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-options .option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-options img {
+    width: 60px; /* Más grande */
+    height: 60px; /* Más grande */
+    margin-bottom: 10px;
+}
+
+.modal-options p {
+    margin: 0;
+    font-size: 14px; /* Más grande */
+}
+
+.modal-options input[type="radio"] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transform: scale(1.4); /* Más grande */
+}
+
+/* Botones principales IGUALES en tamaño */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-buttons button {
+    padding: 12px 20px;
+    min-width: 140px; /* 🔥 Mismo ancho para ambos botones */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    background-color: #5ac8fa;
+    transition: background-color 0.2s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #40a7d7;
+}
+
+/* Botón "Ahora no" SIN subrayado */
+.modal-close {
+    color: #5a5a5a;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: black;
+}
+
+/* Ciclo de respiración */
+/* Ciclo de respiración */
+.ciclo-respiracion {
+    position: relative;
+    width: 450px;
+    height: 420px;
+    margin: 0 auto;
+}
+
+.ciclo-item {
+    position: absolute;
+    text-align: center;
+}
+
+.ciclo-item img {
+    width: 80px;
+    height: 80px;
+}
+
+.ciclo-numero {
+    display: block;
+    color: #5ac8fa;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Posiciones ajustadas */
+.paso1 {
+    top: 0;
+    left: 22%; /* centrado perfecto */
+    transform: translate(-50%, 0);
+}
+
+.paso3 {
+    top: 0;
+    right: 22%; /* centrado perfecto */
+    transform: translate(50%, 0);
+}
+
+.paso2 {
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/* Flechas */
+/* Flechas - tamaño base */
+.flecha {
+    position: absolute;
+    height: auto;
+}
+
+/* Flecha superior (1 -> 3) - tamaño normal */
+.flecha1 {
+    width: 80px;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/* Flecha derecha (3 -> 2) - tamaño reducido */
+.flecha2 {
+    width: 60px;  /* 🔹 Flecha más pequeña */
+    top: 180px;
+    right: 27%;
+}
+
+/* Flecha izquierda (2 -> 1) - tamaño reducido */
+.flecha3 {
+    width: 60px;  /* 🔹 Flecha más pequeña */
+    top: 180px;
+    left: 27%;
+}

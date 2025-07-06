@@ -2,8 +2,8 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Principal</title>
     <link rel="stylesheet" href="assets/styles/intranet.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="sidebar">
         <img src="assets/images/usuario.png" alt="Avatar">
         <a href="#">Inicio</a>
-        <a href="./login.html">Cerrar Sesión</a>
+        <a href="./login.php">Cerrar Sesión</a>
     </div>
 
     <div class="main-content">
@@ -37,12 +37,9 @@
                     <img src="assets/images/flower.png" alt="Calmar Icon">
                     Necesito calmarme
                 </button>
-
             </div>
             <div class="half-buttons">
-                <button>
-                    Necesito ánimo
-                </button>
+                <button>Necesito ánimo</button>
                 <button onclick="window.location.href='./configuracion.html'">
                     <img src="assets/images/settings.png" alt="Config Icon">
                     Configuración
@@ -50,7 +47,70 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Modal de opciones -->
+    <div class="modal-overlay" id="modalCalmarme" style="display: none;">
+        <div class="modal-content">
+            <h2>Te sugerimos estas opciones para mejorar tu estado de ánimo este día:</h2>
+            <div class="modal-options">
+                <label class="option">
+                    <input type="radio" name="estadoAnimo" value="Respiracion">
+                    <img src="assets/images/respiracion.png" alt="Respiración">
+                    <p>Respiración</p>
+                </label>
+                <label class="option">
+                    <input type="radio" name="estadoAnimo" value="Journaling">
+                    <img src="assets/images/libro.png" alt="Journaling">
+                    <p>Journaling</p>
+                </label>
+                <label class="option">
+                    <input type="radio" name="estadoAnimo" value="Frases">
+                    <img src="assets/images/frases.png" alt="Frases">
+                    <p>Frases</p>
+                </label>
+            </div>
+
+            <div class="modal-buttons">
+                <button onclick="aceptarSeleccion()">Aceptar</button>
+                <button onclick="cerrarModal()">Marcar como “Me interesa”</button>
+            </div>
+            <button onclick="cerrarModal()" class="modal-close">Ahora no</button>
+        </div>
+    </div>
+
+    <!-- Modal de ejercicio de respiración -->
+    <div class="modal-overlay" id="modalRespiracion" style="display: none;">
+        <div class="modal-content" style="max-width: 500px;">
+            <h2 style="color: #5ac8fa; margin-bottom: 30px;">Ejercicio de Respiración</h2>
+
+            <div class="ciclo-respiracion">
+                <div class="ciclo-item paso1">
+                    <span class="ciclo-numero">1</span>
+                    <img src="assets/images/persona-inhala.png" alt="Paso 1">
+                </div>
+                <img src="assets/images/arrow3.png" alt="Flecha 1" class="flecha flecha1">
+                <div class="ciclo-item paso3">
+                    <span class="ciclo-numero">3</span>
+                    <img src="assets/images/respiracion.png" alt="Paso 3">
+                </div>
+                <img src="assets/images/arrow2.png" alt="Flecha 2" class="flecha flecha2">
+                <div class="ciclo-item paso2">
+                    <span class="ciclo-numero">2</span>
+                    <img src="assets/images/persona-retiene.png" alt="Paso 2">
+                </div>
+                <img src="assets/images/arrow1.png" alt="Flecha 3" class="flecha flecha3">
+            </div>
+
+            <p style="margin-top: 30px; text-align: center;">Repite este ciclo por 5 minutos para relajarte y reducir el estrés</p>
+
+            <h3 id="timer" style="color: #5ac8fa; font-size: 32px; margin: 20px 0; text-align: center;">05:00</h3>
+
+            <div style="display: flex; justify-content: center;">
+                <button onclick="terminarEjercicio()" style="padding: 12px 20px; border: none; border-radius: 8px; background-color: #5ac8fa; color: white; cursor: pointer;">Terminar ejercicio</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/scripts/intranet.js"></script>
 </body>
 

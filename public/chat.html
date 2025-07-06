@@ -8,29 +8,23 @@
 </head>
 <body>
 
-
-<!-- Header -->
-<header class="top-header">
-  <a href="intranet.html">
-    <img src="assets/images/Logo Mindecho.png" alt="Logo MindEcho" class="logo" />
-  </a>
-</header>
-
-
-
+  <!-- Header -->
+  <header class="top-header">
+    <a href="intranet.html">
+      <img src="assets/images/Logo Mindecho.png" alt="Logo MindEcho" class="logo" />
+    </a>
+  </header>
 
   <!-- Contenedor principal -->
   <div class="main-container">
 
     <!-- Sidebar izquierda -->
     <aside class="sidebar">
-       <button class="back-btn" onclick="window.location.href='intranet.html'">◀ Volver</button>
+      <button class="back-btn" onclick="location.href='intranet.html'">◀ Volver</button>
       <h2 class="chat-title">Chats</h2>
       <h4>Recientes</h4>
-
-      <!-- Recuadro de chats recientes -->
       <div class="chat-box" id="chat-list">
-        <!-- Chats se agregarán dinámicamente -->
+        <!-- Chats dinámicos -->
       </div>
     </aside>
 
@@ -43,35 +37,32 @@
         <h2>¿Cómo puedo ayudarte hoy?</h2>
       </div>
 
-      <!-- Área de mensajes (oculta inicialmente) -->
+      <!-- Área de mensajes -->
       <div class="chat-messages" id="chat-messages">
-        <!-- Aquí se mostrarán mensajes -->
-         <div class="MindEcho-Talks-Box">
+        <div class="MindEcho-Talks-Box">
           <div class="MindEcho-Talks-Container">
-            <div class="VirtualAsistentPicture VASpeak">
-              <img src="assets/images/logo.png" alt="VirtualAsistentPicture" class="imgVA">
+            <div class="VirtualAsistentPicture">
+              <img src="assets/images/logo.png" alt="VA" class="imgVA">
             </div>
-            <div class="VAMenssages VASpeak" >
-              Hola soy MindEchoAI. Cómo te sientes hoy?
+            <div class="VAMenssages">
+              Hola soy MindEchoAI. ¿Cómo te sientes hoy?
             </div>
           </div>
-         </div>
+        </div>
       </div>
 
-      <!-- Input inferior -->
+      <!-- BOTÓN “FINALIZAR SESIÓN” -->
+      <button id="end-chat-btn" class="end-chat-btn">Finalizar sesión</button>
+
+      <!-- Input de conversación -->
       <div class="chat-input">
-        <!-- Botón con tooltip para añadir nuevo chat -->
         <div class="tooltip-container">
           <button class="add-chat-btn" id="add-chat">
             <img src="assets/images/chat.png" alt="Añadir chat" />
           </button>
           <span class="tooltip-text">Añadir otro chat</span>
         </div>
-
-        <!-- Campo de entrada deshabilitado -->
-        <input class="text" type="text" placeholder="Empezar una conversación"  />
-
-        <!-- Botones micrófono y enviar -->
+        <input class="text" type="text" placeholder="Empezar una conversación" />
         <button class="mic-btn">
           <img src="assets/images/microfono.png" alt="Micrófono" />
         </button>
@@ -83,7 +74,27 @@
     </section>
   </div>
 
-  <!-- JavaScript funcional -->
+  <!-- Modal de valoración (fuera de .main-container) -->
+  <div id="rating-modal" class="rating-modal">
+    <div class="rating-modal-content">
+      <h3>Después de esta sesión, ¿Cómo calificarías tu experiencia con MindEcho?</h3>
+      <div class="stars">
+        <!-- Invertidas para que el hover seleccione hacia la izquierda -->
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <label for="rating-feedback">¿Qué podríamos mejorar?</label>
+      <textarea id="rating-feedback" placeholder="Escribe tu comentario…"></textarea>
+      <div class="modal-buttons">
+        <button id="later-btn" class="btn-secondary">En otro momento</button>
+        <button id="submit-rating-btn" class="btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/scripts/chat.js"></script>
 </body>
 </html>

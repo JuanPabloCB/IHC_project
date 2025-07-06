@@ -2,7 +2,7 @@
 function logout() {
     const confirmLogout = confirm('¿Estás seguro de que quieres cerrar sesión?');
     if (confirmLogout) {
-        window.location.href = './login.html';
+        window.location.href = './login.php';
     }
     return false;
 }
@@ -24,7 +24,7 @@ document.getElementById('closeModal').addEventListener('click', () => {
 // Configurar rutas
 const ROUTES = {
     HOME: '../public/index.html',
-    LOGIN: '../public/login.html',
+    LOGIN: '../public/login.php',
     DASHBOARD: '../public/dashboard.html',
     PROFILE: '../public/profile.html',
     SETTINGS: '../public/configuracion.html',

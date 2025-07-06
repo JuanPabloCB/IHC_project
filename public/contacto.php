@@ -27,11 +27,11 @@
       <a href="./contacto.php">Contacto</a>
 
       <!-- Solo aparecerá en responsive -->
-      <a href="./login.html" class="login-button responsive">Iniciar Sesión</a>
+      <a href="./login.php" class="login-button responsive">Iniciar Sesión</a>
     </nav>
 
     <!-- Solo visible en escritorio -->
-    <a href="./login.html" class="login-button desktop">Iniciar Sesión</a>
+    <a href="./login.php" class="login-button desktop">Iniciar Sesión</a>
   </div>
   </header>
 
@@ -60,7 +60,7 @@
     </form>
 
     <?php
-    include('actContacto.php');
+    include('./includes/actContacto.php');
     ?>
 </main>
 

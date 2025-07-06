@@ -37,7 +37,7 @@
 
   <main class="contact-container">
     <h1>Contáctanos</h1>
-    <form class="contact-form" method="post">
+    <form class="contact-form" method="post" action="actContacto.php">
         <div class="form-row">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -56,12 +56,8 @@
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ingrese un mensaje" required></textarea>
         </div>
-        <button type="submit" name="enviar" class="btn-enviar">Enviar</button>
+        <input type="submit" name="enviar" class="btn-enviar" value="Enviar">
     </form>
-
-    <?php
-      include('actContacto.php');
-    ?>
 
 </main>
 

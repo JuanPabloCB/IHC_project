@@ -4,17 +4,16 @@ include('conexion.php');
 
 if (isset($_POST['enviar'])) {
     if(
-    $nombre = $_POST['nombre'] >= 1 &&
+    $nombres = $_POST['nombre'] >= 1 &&
     $apellidos = $_POST['apellidos'] >= 1 &&
     $correo = $_POST['correo'] >= 1 &&
     $mensaje = $_POST['mensaje'] >= 1
     ) {
-        $nombre = trim($_POST['nombre']);
+        $nombres = trim($_POST['nombre']);
         $apellidos = trim($_POST['apellidos']);
         $correo = trim($_POST['correo']);
         $mensaje = trim($_POST['mensaje']);
-        $consulta = "INSERT INTO visitante(nombre, apellidos, correo, mensaje)
-                VALUES ('$nombre', '$apellidos', '$correo', '$mensaje')";
+        $consulta = "INSERT INTO visitante(IDvisitante, nombres, apellidos, correo, mensaje) VALUES (NULL, '$nombres', '$apellidos', '$correo', '$mensaje')";
 
         $verificarCorreo = mysqli_query($conexion, "SELECT * FROM visitante WHERE correo='$correo'");
 

@@ -15,7 +15,6 @@
   <div class="navbar-content">
     <img src="assets/images/Logo Mindecho.png" alt="MindEcho Logo" class="logo">
 
-    <!-- Icono hamburguesa -->
     <div class="menu-toggle" id="menuToggle">
       <i class="fas fa-bars"></i>
     </div>
@@ -24,58 +23,57 @@
       <a href="./index.html">Inicio</a>
       <a href="./nosotros.html">Nosotros</a>
       <a href="./experiencias.html">Experiencias</a>
-      <a href="./contacto.html">Contacto</a>
-
-      <!-- Solo aparecerá en responsive -->
+      <a href="./contacto.php">Contacto</a>
       <a href="./login.html" class="login-button responsive">Iniciar Sesión</a>
     </nav>
 
-    <!-- Solo visible en escritorio -->
     <a href="./login.html" class="login-button desktop">Iniciar Sesión</a>
   </div>
 </header>
 
 <!-- Main content -->
 <main>
-  <!-- Imagen de fondo -->
   <img src="assets/images/registro.jpeg" alt="Fondo">
   <div class="overlay"></div>
 
-  <!-- Cuadro celeste -->
   <div class="registro-box">
     <h2>Regístrate</h2>
 
-    <div class="form-group">
-      <img src="assets/images/avatar.png" alt="Usuario">
-      <input type="text" placeholder="Nombres y Apellidos" id="name">
-    </div>
+    <!-- Sin action ni method porque se usará fetch -->
+    <form id="registerForm">
 
-    <div class="form-group">
-      <img src="assets/images/calendario.png" alt="Fecha">
-      <input type="date" id="dob">
-    </div>
+      <div class="form-group">
+        <img src="assets/images/avatar.png" alt="Usuario">
+        <input type="text" name="nombresyApellidos" placeholder="Nombres y Apellidos" id="name">
+      </div>
 
-    <div class="form-group">
-      <img src="assets/images/correo.png" alt="Correo">
-      <input type="email" placeholder="Correo Electrónico" id="email">
-    </div>
+      <div class="form-group">
+        <img src="assets/images/calendario.png" alt="Fecha">
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+      </div>
 
-    <div class="form-group">
-      <img src="assets/images/key.png" alt="Contraseña">
-      <input type="password" placeholder="Contraseña" id="password">
-      <img src="assets/images/ojo.png" alt="Mostrar contraseña" id="eyeClosed" style="height: 20px; cursor: pointer;">
-      <img src="assets/images/invisible.png" alt="Ocultar contraseña" id="eyeOpen" style="height: 20px; cursor: pointer; display: none;">
-    </div>
+      <div class="form-group">
+        <img src="assets/images/correo.png" alt="Correo">
+        <input type="email" name="correo" placeholder="Correo Electrónico" id="email">
+      </div>
 
+      <div class="form-group">
+        <img src="assets/images/key.png" alt="Contraseña">
+        <input type="password" name="contraseña" placeholder="Contraseña" id="password">
+        <img src="assets/images/ojo.png" alt="Mostrar contraseña" id="eyeClosed" style="height: 20px; cursor: pointer;">
+        <img src="assets/images/invisible.png" alt="Ocultar contraseña" id="eyeOpen" style="height: 20px; cursor: pointer; display: none;">
+      </div>
 
-    <div class="checkbox-container">
-      <label>
-        <input type="checkbox" id="terms">
-        He leído y acepto las <a href="#">Políticas de Privacidad</a>
-      </label>
-    </div>
+      <div class="checkbox-container">
+        <label>
+          <input type="checkbox" id="terms">
+          He leído y acepto las <a href="#">Políticas de Privacidad</a>
+        </label>
+      </div>
 
-    <button class="btn-submit" id="registerBtn">Crear Cuenta</button>
+      <button type="submit" class="btn-submit" id="registerBtn">Crear Cuenta</button>
+
+    </form>
 
     <div class="line"></div>
 
@@ -96,9 +94,9 @@
     </div>
   </div>
 </main>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="assets/scripts/registro.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="assets/scripts/registro.js"></script>
 
 </body>
 </html>

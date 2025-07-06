@@ -24,7 +24,7 @@
       <a href="./index.html">Inicio</a>
       <a href="./nosotros.html">Nosotros</a>
       <a href="./experiencias.html">Experiencias</a>
-      <a href="./contacto.html">Contacto</a>
+      <a href="./contacto.php">Contacto</a>
 
       <!-- Solo aparecerá en responsive -->
       <a href="./login.html" class="login-button responsive">Iniciar Sesión</a>
@@ -37,11 +37,11 @@
 
   <main class="contact-container">
     <h1>Contáctanos</h1>
-    <form class="contact-form" method="post" action="actContacto.php">
+    <form class="contact-form" method="post">
         <div class="form-row">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                <input type="text" id="nombres" name="nombres" placeholder="Ingrese su nombre" required>
             </div>
             <div class="form-group">
                 <label for="apellidos">Apellidos</label>
@@ -54,11 +54,14 @@
         </div>
         <div class="form-group">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ingrese un mensaje" required></textarea>
+            <textarea type="text" id="mensaje" name="mensaje" rows="4" placeholder="Ingrese un mensaje" required></textarea>
         </div>
         <input type="submit" name="enviar" class="btn-enviar" value="Enviar">
     </form>
 
+    <?php
+    include('actContacto.php');
+    ?>
 </main>
 
 <div class="footer-linea"></div>
@@ -95,9 +98,6 @@
   </div>
   <p><br></p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="assets/scripts/contacto.js"></script>
 
 </body>
 </html>

@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault(); // Evita recarga
 
     const name = document.getElementById("name").value.trim();
-    const dob = document.getElementById("dob").value.trim();
+    const fechaNacimiento = document.getElementById("fechaNacimiento").value.trim();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
     const terms = document.getElementById("terms").checked;
 
     // Validación
-    if (!name || !dob || !email || !password) {
+    if (!name || !fechaNacimiento || !email || !password) {
       Swal.fire({
         icon: 'warning',
         title: 'Campos incompletos',
@@ -29,25 +29,53 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Guardar nombre
-    localStorage.setItem("usuarioNombre", name);
-
-    // Mensaje de éxito y redirección
-    Swal.fire({
-      icon: 'success',
-      title: '¡Cuenta creada con éxito!',
-      showConfirmButton: false,
-      timer: 2000
-    }).then(() => {
-      window.location.href = "intranet.html"; // Redirige al dashboard
+    // ENVIAR DATOS A PHP CON FETCH
+    fetch('registrar.php', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nombresyApellidos: name,
+        fechaNacimiento: fechaNacimiento,
+        correo: email,
+        contraseña: password
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === "success") {
+        localStorage.setItem("usuarioNombre", name);
+        Swal.fire({
+          icon: 'success',
+          title: data.message,
+          showConfirmButton: false,
+          timer: 2000
+        }).then(() => {
+          window.location.href = "intranet.html";
+        });
+      } else {
+        Swal.fire({
+          icon: data.status === "warning" ? 'warning' : 'error',
+          title: data.status === "warning" ? 'Advertencia' : 'Error',
+          text: data.message,
+        });
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Ocurrió un error al registrar.',
+      });
     });
+
   });
 
-  // Menú hamburguesa
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('mainMenu');
   toggle.addEventListener('click', () => {
     menu.classList.toggle('show');
   });
 });
-

@@ -82,7 +82,7 @@
     <div class="footer-links">
       <div>
         <h4>Ayuda</h4>
-        <a href="./contacto.html">Preguntas Frecuentes</a>
+        <a href="#">Preguntas Frecuentes</a>
         <a href="#">Servicios Externos</a>
         <a href="#">Teléfono</a>
       </div>

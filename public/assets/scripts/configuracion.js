@@ -288,25 +288,6 @@ usernameInput.addEventListener('blur', function() {
     }
 });
 
-// CONFIRMACIÓN AL ELIMINAR CUENTA
-const deleteAccountBtn = document.querySelector('.btn-delete');
-deleteAccountBtn.addEventListener('click', function() {
-    const emailField = modal.querySelector('input[type="email"]');
-    const passwordField = modal.querySelector('input[type="password"]');
-    
-    if (!emailField.value || !passwordField.value) {
-        alert('Por favor completa todos los campos');
-        return;
-    }
-    
-    const confirmDelete = confirm('¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.');
-    if (confirmDelete) {
-        alert('Cuenta eliminada exitosamente');
-        modal.style.display = 'none';
-        navigateTo('LOGIN');
-    }
-});
-
 // CONFIGURACIÓN DE BOTONES DE NAVEGACIÓN
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Página de configuración cargada');

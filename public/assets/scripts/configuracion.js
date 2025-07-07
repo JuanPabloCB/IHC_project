@@ -27,7 +27,7 @@ const ROUTES = {
     LOGIN: '../public/login.php',
     DASHBOARD: '../public/dashboard.html',
     PROFILE: '../public/profile.html',
-    SETTINGS: '../public/configuracion.html',
+    SETTINGS: '../public/configuracion.php',
     INTRANET: '../public/intranet.html'
 };
 

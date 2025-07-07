@@ -171,17 +171,18 @@
         <div class="modal-content">
             <h2>Confirmación de Eliminación de Cuenta</h2>
             <p>Antes de eliminar su cuenta, debemos comprobar si es usted:</p>
+            <form action="./includes/actEliminar.php" method="post">
+                <div class="input-group">
+                    <input type="email" name="correo" placeholder="Correo Electrónico">
+                </div>
 
-            <div class="input-group">
-                <input type="email" placeholder="Correo Electrónico">
-            </div>
+                <div class="input-group">
+                    <input type="password" name="contraseña" placeholder="Contraseña">
+                </div>
 
-            <div class="input-group">
-                <input type="password" placeholder="Contraseña">
-            </div>
-
-            <button class="btn-cancel" id="closeModal">Volver</button>
-            <button class="btn-delete">Eliminar Cuenta</button>
+                <button class="btn-cancel" id="closeModal">Volver</button>
+                <button class="btn-delete" name="eliminar">Eliminar Cuenta</button>
+            </form>
         </div>
     </div>
 

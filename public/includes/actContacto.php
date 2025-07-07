@@ -18,20 +18,20 @@ if (isset($_POST['enviar'])) {
         $verificarCorreo = mysqli_query($conexion, "SELECT * FROM visitante WHERE correo='$correo'");
 
         if(mysqli_num_rows($verificarCorreo) > 0){
-            echo "
-            <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
-            <script>
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Correo ya registrado',
-                    text: 'El correo ya está registrado, por favor ingrese otro.',
-                    confirmButtonText: 'Aceptar'
-                }).then(() => {
-                    window.location = \"contacto.php\";
-                });
-            </script>
-            ";
-            exit();
+        echo "
+        <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"></script>
+        <script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Correo ya registrado',
+                text: 'El correo ya está registrado, por favor ingrese otro.',
+                confirmButtonText: 'Aceptar'
+            }).then(() => {
+                window.location = \"contacto.php\";
+            });
+        </script>
+        ";
+        exit();
         }
             $resultado = mysqli_query($conexion, $consulta);
             if($resultado){

@@ -104,10 +104,11 @@ header p {
 }
 
 .half-buttons {
-    display: flex;
-    gap: 30px;
-    width: 100%;
+  display: flex;
+  gap: 20px; /* ✅ Espacio entre botones */
+  margin-top: 15px; /* ✅ Espacio entre filas */
 }
+
 
 .half-buttons button {
     flex: 1;
@@ -164,6 +165,65 @@ header h1 {
     width: auto;
     object-fit: contain;
 }
+.historial-emociones {
+  flex: 1;
+  max-width: 320px;
+  margin: 40px 40px 40px 0;
+  background-color: #fff8f7;
+  border: 2px solid #5ac8fa;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  align-self: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.historial-emociones h2 {
+  color: #5ac8fa;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.historial-emociones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.historial-emociones li {
+  background-color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #5ac8fa;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.historial-emociones li strong {
+  color: #5ac8fa;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  body {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 30px;
+  }
+
+  .historial-emociones {
+    margin: 0 30px 30px 30px;
+    max-width: 100%;
+  }
+}
+
+
 
 /* MODAL */
 /* Fondo oscuro que cubre toda la pantalla */
@@ -229,6 +289,8 @@ header h1 {
 .modal-buttons .close-button {
     background-color: gray;
 }
+
+
 
 
 /*MODAL222*/

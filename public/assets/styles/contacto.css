@@ -16,29 +16,33 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .navbar-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 40px;
-    max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto; /* ✅ ESTO CENTRA el contenido */
 }
+
 
 /* LOGO */
 .logo {
-    height: 140px;
-    width: auto;
-    object-fit: contain;
+  height: 60px;              /* ajusta el tamaño del logo */
+  width: auto;
+  object-fit: contain;
+  display: inline-block;     /* ✅ evita que ocupe todo el ancho */
+  max-width: 150px;  
 }
 
 /* MENÚ */

@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <header class="navbar">
+<header class="navbar">
     <div class="navbar-content">
     <img src="assets/images/Logo Mindecho.png" alt="MindEcho Logo" class="logo" onclick="location.href='./index.html'" style="cursor: pointer;">
 
@@ -82,7 +82,7 @@
     <div class="footer-links">
       <div>
         <h4>Ayuda</h4>
-        <a href="#">Preguntas Frecuentes</a>
+        <a href="./preguntas.html">Preguntas Frecuentes</a>
         <a href="#">Servicios Externos</a>
         <a href="#">Teléfono</a>
       </div>
@@ -98,6 +98,6 @@
   </div>
   <p><br></p>
 </footer>
-
+  <script src="assets/scripts/contacto.js"></script>
 </body>
 </html>

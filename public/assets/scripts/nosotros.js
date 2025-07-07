@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('menuToggle');
-  const menu = document.getElementById('mainMenu');
+  const menu = document.querySelector('.menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  }
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('menuToggle');
-  const menu = document.getElementById('mainMenu');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
   });
 });

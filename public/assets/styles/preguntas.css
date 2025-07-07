@@ -1,0 +1,503 @@
+/* === GENERAL === */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  max-width: none;
+}
+
+/* LOGO */
+.logo {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* MENÚ */
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #5ac5dd;
+}
+
+/* BOTÓN LOGIN */
+.login-button {
+  background-color: #5ac5dd;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #48b3cf;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Ocultar botón responsive en escritorio */
+.login-button.responsive {
+  display: none;
+}
+
+/* Ocultar botón desktop en móvil */
+.login-button.desktop {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    z-index: 999;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .login-button.responsive {
+    display: inline-block;
+    background-color: #5ac5dd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .login-button.desktop {
+    display: none;
+  }
+}
+
+/* === MAIN === */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+/* === ACERCA DE NOSOTROS === */
+.acerca-de {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.acerca-de h1 {
+  color: #0ac6ef;
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  padding-left: 0;
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  text-align: left;
+}
+
+.texto {
+  flex: 1 1 55%;
+  max-width: 600px;
+}
+
+.texto p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.texto h3 {
+  color: #f4a71d;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.imagen {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.imagen img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .texto,
+  .imagen {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+
+/* === INTEGRANTES === */
+.integrantes {
+  margin-top: 50px;
+}
+
+.integrantes h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0ac6ef;
+  margin: 40px auto 30px auto;
+  max-width: 1200px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.miembros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* === CARD DE MIEMBRO === */
+.miembro {
+  background: #f1f1f1;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: calc(25% - 30px); /* 4 por fila */
+  min-width: 220px;
+  max-width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  /* animación al cargar */
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+/* === EFECTO HOVER MODERNO === */
+.miembro:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === AVATAR === */
+.miembro img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.miembro strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+  font-size: 1rem;
+}
+
+.miembro p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1000px) {
+  .miembro {
+    width: calc(33.33% - 30px); /* 3 por fila */
+  }
+}
+
+@media (max-width: 768px) {
+  .miembro {
+    width: calc(50% - 30px); /* 2 por fila */
+  }
+
+  .integrantes h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .miembro {
+    width: 100%; /* 1 por fila */
+  }
+}
+
+
+
+
+/* === FOOTER === */
+footer {
+  background-color: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .miembros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .miembro {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .contacto form {
+    width: 90%;
+  }
+
+  .titulo-centrado {
+    text-align: center;
+  }
+}
+
+
+/*FOOTER*/
+.footer-linea {
+height: 3px;
+  background-color: #40b0c6;
+  width: 100%;
+  margin-bottom: 30px;     
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-top: 1px solid #eaeaea;
+  font-family: Arial, sans-serif;
+  margin-top: 120px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-social {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} 
+
+.logo img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.social a {
+  margin-right: 10px;
+}
+
+.footer-links {
+  flex: 2 1 500px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.faq-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 100px;
+  background: transparent;   /* ✅ sin fondo */
+  box-shadow: none; 
+}
+
+.faq-container h1 {
+  text-align: center;
+  color: #0ac6ef;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.accordion {
+  background-color: #5ac5dd;
+  color: #fff;
+  cursor: pointer;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+  border-radius: 8px;
+}
+
+.accordion:hover {
+  background-color: #48b3cf;
+}
+
+.accordion.active {
+  background-color: #40b0c6;
+}
+
+.panel {
+  padding: 0 20px;
+  background-color:transparent;
+  display: none;
+  overflow: hidden;
+  border-left: 4px solid #5ac5dd;
+  margin-bottom: 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+.panel p {
+  margin: 15px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-social {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links div {
+    margin: 20px 0;
+  }
+}

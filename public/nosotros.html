@@ -115,7 +115,7 @@
     <div class="footer-links">
       <div>
         <h4>Ayuda</h4>
-        <a href="./contacto.php">Preguntas Frecuentes</a>
+        <a href="preguntas.html">Preguntas Frecuentes</a>
         <a href="#">Servicios Externos</a>
         <a href="#">Teléfono</a>
       </div>
@@ -131,6 +131,22 @@
   </div>
   <p><br></p>
 </footer>
-  <script src="assets/scripts/nosotros.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.querySelector('.menu');
+
+    if (!toggle || !menu) {
+      console.warn("No se encontró el botón o menú");
+      return;
+    }
+
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('show');
+      console.log("Menú toggled:", menu.classList.contains('show')); // Para verificar en consola
+    });
+  });
+</script>
+
 </body>
 </html>

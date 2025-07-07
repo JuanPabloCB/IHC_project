@@ -4,6 +4,8 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1f1f1f;
     transition: background-color 0.3s ease;
+    height: auto;
+    min-height: 100vh;
 }
 
 body.light-theme {
@@ -16,7 +18,8 @@ body.dark-theme {
 
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;  
+    align-items: stretch;
 }
 
 .sidebar {
@@ -28,6 +31,8 @@ body.dark-theme {
     align-items: center;
     padding-top: 40px;
     transition: background-color 0.3s ease;
+    height: auto;           
+    min-height: 100%; 
 }
 
 .dark-theme .sidebar {
@@ -49,10 +54,11 @@ body.dark-theme {
 }
 
 .main {
-    background-color: #fef6f4;
     flex: 1;
     padding: 30px;
+    background-color: #fef6f4;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100%;
 }
 
 .dark-theme .main {

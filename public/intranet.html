@@ -22,14 +22,14 @@
                 <img class="logo-icon" src="assets/images/logo.png" alt="Logo">
             </div>
 
-            <h1 id="saludo-usuario">Bienvenido [Name], aquí estoy para ti.</h1>
+            <h1 id="saludo-usuario">Bienvenido/a, aquí estoy para ti.</h1>
             <p>¿Cómo te sientes hoy? Estoy para escucharte.</p>
         </header>
 
         <div class="buttons-grid">
             <button class="full-width" onclick="window.location.href='comunicacion.html'">Hablar ahora</button>
             <div class="half-buttons">
-                <button>
+                <button onclick="abrirModalEmocion()">
                     <img src="assets/images/CaraFeliz.png" alt="Smile Icon">
                     Registrar cómo me siento
                 </button>
@@ -39,14 +39,18 @@
                 </button>
             </div>
             <div class="half-buttons">
-                <button>Necesito ánimo</button>
+                <button onclick="mostrarFraseAnimo()">Necesito ánimo</button>
                 <button onclick="window.location.href='./configuracion.php'">
                     <img src="assets/images/settings.png" alt="Config Icon">
                     Configuración
                 </button>
-            </div>
+                </div>
         </div>
     </div>
+    <section class="historial-emociones" id="historialEmociones">
+        <h2>Mi Historial Emocional</h2>
+        <ul id="listaHistorial"></ul>
+    </section>
 
     <!-- Modal de opciones -->
     <div class="modal-overlay" id="modalCalmarme" style="display: none;">
@@ -124,6 +128,46 @@
             </div>
         </div>
     </div>
+    <!-- Modal de frases de ánimo -->
+    <div class="modal-overlay" id="modalAnimo" style="display: none;">
+    <div class="modal-content" style="max-width: 400px; text-align: center;">
+        <h2 style="color: #5ac8fa;">Un mensaje para ti</h2>
+        <p id="fraseAnimo" style="font-size: 18px; margin: 20px 0; color: #444;"></p>
+        <button onclick="cerrarFraseAnimo()" style="padding: 10px 20px; border: none; border-radius: 8px; background-color: #5ac8fa; color: white; cursor: pointer;">Cerrar</button>
+    </div>
+    </div>
+    <!-- Modal: Registrar cómo me siento -->
+    <div class="modal-overlay" id="modalEmocion" style="display: none;">
+    <div class="modal-content" style="max-width: 500px;">
+        <h2 style="color: #5ac8fa;">¿Cómo te sientes hoy?</h2>
+        <form id="formEmocion">
+        <div style="margin: 20px 0;">
+            <label for="emocion">Selecciona una emoción:</label><br><br>
+            <select id="emocion" required style="width: 100%; padding: 10px; border-radius: 8px;">
+            <option value="">-- Elige una emoción --</option>
+            <option value="Feliz">😊 Feliz</option>
+            <option value="Triste">😢 Triste</option>
+            <option value="Ansioso">😟 Ansioso/a</option>
+            <option value="Motivado">💪 Motivado/a</option>
+            <option value="Frustrado">😤 Frustrado/a</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="comentario">Comentario (opcional):</label><br>
+            <textarea id="comentario" rows="3" style="width: 100%; padding: 10px; border-radius: 8px;"></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+            <button type="button" onclick="cerrarEmocion()" style="padding: 10px 20px; border: none; border-radius: 8px; background-color: #ddd; cursor: pointer;">Ahora no</button>
+            <button type="submit" style="padding: 10px 20px; border: none; border-radius: 8px; background-color: #5ac8fa; color: white; cursor: pointer;">Registrar</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    
+
+
 
     <script>
         let seleccion = '';
@@ -188,6 +232,109 @@
             tiempo = 300;
             document.getElementById('timer').innerText = '05:00';
         }
+        
+        const frasesAnimo = [
+        "Eres más fuerte de lo que crees.",
+        "Este momento también pasará.",
+        "Confía en ti, lo estás haciendo bien.",
+        "Mereces todo lo bueno que te está esperando.",
+        "Respira, sonríe y sigue adelante.",
+        "Cada día es una nueva oportunidad.",
+        "Tu bienestar importa. Tú importas."
+        ];
+
+        function mostrarFraseAnimo() {
+        const modal = document.getElementById('modalAnimo');
+        const frase = frasesAnimo[Math.floor(Math.random() * frasesAnimo.length)];
+        document.getElementById('fraseAnimo').innerText = frase;
+        modal.style.display = 'flex';
+        }
+
+        function cerrarFraseAnimo() {
+        document.getElementById('modalAnimo').style.display = 'none';
+        }
+        function abrirModalEmocion() {
+  document.getElementById("modalEmocion").style.display = "flex";
+}
+
+    function cerrarEmocion() {
+    document.getElementById("modalEmocion").style.display = "none";
+    }
+
+    // Registrar emoción al enviar el formulario
+    document.getElementById("formEmocion").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const emocion = document.getElementById("emocion").value;
+    const comentario = document.getElementById("comentario").value;
+    const hoy = new Date().toISOString().split("T")[0];
+
+    if (!emocion) {
+        alert("Por favor selecciona una emoción.");
+        return;
+    }
+
+    const entrada = {
+        fecha: hoy,
+        emocion,
+        comentario
+    };
+
+    let registros = JSON.parse(localStorage.getItem("registrosEmociones")) || [];
+
+    // Reemplaza si ya existe entrada del mismo día
+    registros = registros.filter(r => r.fecha !== hoy);
+    registros.push(entrada);
+
+    localStorage.setItem("registrosEmociones", JSON.stringify(registros));
+    alert("¡Gracias por registrar cómo te sientes!");
+
+    cerrarEmocion();
+    mostrarHistorialEmociones();
+    });
+
+    // Mostrar historial en pantalla
+    function mostrarHistorialEmociones() {
+    const lista = document.getElementById("listaHistorial");
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    const registros = JSON.parse(localStorage.getItem("registrosEmociones")) || [];
+
+    if (registros.length === 0) {
+        lista.innerHTML = "<li style='color:#888;'>No hay emociones registradas aún.</li>";
+        return;
+    }
+
+    registros.sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+    registros.forEach((registro, index) => {
+        const li = document.createElement("li");
+        li.style = "padding: 10px; border-bottom: 1px solid #ccc;";
+
+        li.innerHTML = `
+        <strong>${registro.fecha}</strong>: ${registro.emocion}
+        ${registro.comentario ? `<br><em>${registro.comentario}</em>` : ""}
+        `;
+
+        lista.appendChild(li);
+    });
+    }
+
+    // Cerrar modal si se hace clic fuera del contenido
+    window.addEventListener("click", function (e) {
+    const modal = document.getElementById("modalEmocion");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+    });
+
+    // Mostrar historial al cargar la página
+    window.addEventListener("DOMContentLoaded", () => {
+    mostrarHistorialEmociones();
+    });
+
     </script>
 
 </body>
